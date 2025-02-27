@@ -1,7 +1,7 @@
 # Unity YAML Parser #
 
-This project aims to provide a python3 API to load and dump Unity YAML 
-files(configurations, prefabs, scenes, serialized data, etc) in the exact same 
+This project aims to provide a python3 API to load and dump [Unity YAML 
+files](https://docs.unity3d.com/Manual/TextSceneFormat.html) (configurations, prefabs, scenes, serialized data, etc) in the exact same 
 format the internal Unity YAML serializer does.
 
 Using this API you will be able to easily manipulate(as python objects) 
@@ -50,6 +50,11 @@ doc.dump_yaml()
 # calling entry method for a doc with multiple document will return the first one
 print(doc.entry.__class__.__name__)
 # 'Prefab'
+
+# get the object ID number
+# e.g., the first line of an object == '--- !u!1 &42362281700597288'
+print(doc.entry.anchor)  
+# '42362281700597288' 
 ````
 
 ## Classes ##
